@@ -1,3 +1,4 @@
+from operator import not_
 from bestMove import bestMove
 from minVal import minVal, showBoard
 from maxVal import maxVal
@@ -84,10 +85,13 @@ def play():
     print()
     print('Want to play one more time? (Y/N)')
     c = input()
-    if c=='Y':
+    while not(c=='Y' or c=='y' or c=='n' or c=='N'):
+        print("Please provide a valid input")
+        c = input()
+    if c=='Y' or c=='y':
         print()
         play()
-    else:
+    elif c=='N' or c=='n':
         print('No problem! Hope you had a nice time. See ya later!')
         return
         
